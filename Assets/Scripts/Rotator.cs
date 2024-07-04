@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    private void Update( )
-    {
-            transform.rotation *= Quaternion.Euler(0, 0.3f, 0);
+    private float _speed = 100f;
+    private void Update()
+    {   
+        transform.Rotate(0, _speed * Time.deltaTime, 0, Space.Self);
     }
 }
